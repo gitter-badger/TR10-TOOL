@@ -19,8 +19,7 @@
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="tr10-tool" class="anchor" href="#tr10-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>TR10 TOOL</h1>
+      <p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/TR10-TOOL-BANNER.png" alt="by @neocarvajal" title="TR10-TOOL BANNER"></p>
 
 <h1>
 <a id="advertencia" class="anchor" href="#advertencia" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advertencia</h1>
@@ -52,18 +51,18 @@
 <li>
 <p>Conectar el dispositivo al Pc Gnu/Linux y en un terminal entrar como root:</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/1.png" alt="" title="Permisos root en terminal"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/1.png" alt="by @neocarvajal" title="Permisos root en terminal"></p>
 </li>
 <li>
-<p>Listar los dispositivos conectados via USB y copiar el vendor_id 
-(podria solo mostrar hasta el ID resaltado sin el nombre de la compañia).</p>
+<p>Listar los dispositivos conectados vía USB y copiar el vendor_id 
+(podria solo mostrar hasta el ID resaltado sin el nombre de la compañía).</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/2.png" alt="" title="Listar dispositivos con lsusb"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/2.png" alt="by @neocarvajal" title="Listar dispositivos con lsusb"></p>
 </li>
 <li>
 <p>Crear una regla en la siguiente ruta /etc/udev/rules.d/51-android.rules (si ya existe el archivo ve al siguiente paso).</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/3.png" alt="" title="Crear regla udev"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/3.png" alt="by @neocarvajal" title="Crear regla udev"></p>
 </li>
 <li>
 <p>Con tu editor de texto preferido abre el archivo creado(/etc/udev/rules.d/51-android.rules)
@@ -76,12 +75,12 @@ Copia y pega esta cadena en el archivo:</p>
 <p>En el mismo orden que aparece el ID del dispositivo en el paso 2, 
   reemplazalos en esta cadena respectivamente (idVendor | idProduct) y guarda los cambios:</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/6.png" alt="" title="Agregar idVendor y idProduct"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/6.png" alt="by @neocarvajal" title="Agregar idVendor y idProduct"></p>
 </li>
 <li>
 <p>En el terminal reinicia el servicio udev:</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/7.png" alt="" title="Reiniciar servicio UDEV"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/7.png" alt="by @neocarvajal" title="Reiniciar servicio UDEV"></p>
 </li>
 </ol>
 
@@ -90,20 +89,20 @@ Copia y pega esta cadena en el archivo:</p>
 
 <ol>
 <li>
-<p>Entrar en Configuración/Acerca de la tablet/ y precionar varias veces en el Numero de Compilación:</p>
+<p>Entrar en Configuración/Acerca de la tablet/ y presionar varias veces en el Numero de Compilación:</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/4.png" alt="" title="Activar menú programador"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/4.png" alt="by @neocarvajal" title="Activar menú programador"></p>
 </li>
 <li>
 <p>Entrar en Configuración/Menú desarrollador/Depuración USB:</p>
 
-<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/5.png" alt="" title="Activar depuración USB"></p>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/5.png" alt="by @neocarvajal" title="Activar depuración USB"></p>
 </li>
 <li>
 <p>Aceptar los permisos Depuración USB (huella digital) al conectar la tablet a la pc:</p>
 
 <h2>
-<a id="" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/8.png" alt="" title="Huella digital">
+<a id="" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/8.png" alt="by @neocarvajal" title="Huella digital">
 </h2>
 </li>
 </ol>
@@ -134,12 +133,12 @@ el error de que no encuentra el fichero).</p></li>
 <h1>
 <a id="meta" class="anchor" href="#meta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Meta</h1>
 
-<p>Crear una herramienta con más opciones y mucho más universal como si se tratara de una Suite tipo (kies) que permita gestionar el dispositivo facilmente en tareas comunes(respaldos, copiar archivos entre un pc y el dispositivo entre otros), manteniendo las opciones "avanzadas" como flashear Cunstom Recovery.</p>
+<p>Crear una herramienta con más opciones y mucho más universal como si se tratara de una "Suite" que permita gestionar diferentes dispositivos en tareas comunes fácilmente (respaldos, copiar archivos entre un pc y el dispositivo, entre otros), manteniendo las opciones "avanzadas" como flashear Temp Recovery</p>
 
 <h1>
 <a id="soportecontacto" class="anchor" href="#soportecontacto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Soporte/Contacto</h1>
 
-<p>Para discuciones en cuanto al desarrollo y mejoras del script puedes visitar el foro : <a href="http://tabletcanaima.com.ve">http://tabletcanaima.com.ve</a> y adicionalmente puedes encontrarme en #Twitter como <a href="https://github.com/neocarvajal" class="user-mention">@neocarvajal</a></p>
+<p>Para discusiones en cuanto al desarrollo y mejoras del script puedes visitar el foro : <a href="http://tabletcanaima.com.ve">http://tabletcanaima.com.ve</a> en la sección desarrollo y adicionalmente puedes encontrarme en #Twitter como <a href="https://github.com/neocarvajal" class="user-mention">@neocarvajal</a></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/neocarvajal/TR10-TOOL">TR10 TOOL </a> is maintained by <a href="https://github.com/neocarvajal">neocarvajal</a>.</span>
