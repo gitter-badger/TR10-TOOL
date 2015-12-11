@@ -20,9 +20,10 @@
 
     <section class="main-content">
       <h1>
-<a id="advertencia" class="anchor" href="#advertencia" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advertencia</h1>
+<a id="tr10-tool" class="anchor" href="#tr10-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>TR10 TOOL</h1>
 
-<hr>
+<h1>
+<a id="advertencia" class="anchor" href="#advertencia" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advertencia</h1>
 
 <p>Esta herramienta fue desarrollada con fines educativos, cada persona es responsable de su uso y de los posibles daños ocasionados a los equipos con los que se utilice el script !</p>
 
@@ -36,68 +37,89 @@
 
 <hr>
 
-<h1>
-<a id="realizar-todos-los-pasos-como-super-usuario" class="anchor" href="#realizar-todos-los-pasos-como-super-usuario" aria-hidden="true"><span class="octicon octicon-link"></span></a>(realizar todos los pasos como "super usuario")</h1>
+<p>realizar todos los pasos como super usuario</p>
 
 <hr>
 
-<p>Usualmente puede pasar que en Gnu/Linux (dependiendo de la distribución) no reconozca de buenas a primeras tu dispositivo y por tal razón sea imposible que pueda comunicarse con el vía adb o fastboot. Si este es tu caso tendrás que hacer ciertas cosas antes de empezar a utilizar esta herramienta (Si este no es tu caso ve directo a Preparando el dispositivo) .</p>
+<p>Usualmente puede pasar que en Gnu/Linux (dependiendo de la distribución) no reconozca de buenas a primeras tu dispositivo y por tal razón sea imposible que pueda comunicarse con el vía adb o fastboot. Si este es tu caso tendrás que hacer ciertas cosas antes de empezar a utilizar esta herramienta (Si este no es tu caso ve directo a Preparando el dispositivo).</p>
 
 <h2>
-<a id="preparando-el-sistema" class="anchor" href="#preparando-el-sistema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparando el sistema:</h2>
+<a id="preparando-el-sistema" class="anchor" href="#preparando-el-sistema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparando el sistema</h2>
 
 <p>Este procedimiento seria el equivalente a instalar los drivers en un sistema privativo como Windows para poder reconocer el dispositivo, estos son los pasos a seguir:</p>
 
-<pre><code>1 - Conectar el dispositivo al Pc Gnu/Linux y en un terminal entrar como root:
-    https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/1.png
+<ol>
+<li>
+<p>Conectar el dispositivo al Pc Gnu/Linux y en un terminal entrar como root:</p>
 
-2 - Listar los dispositivos conectados via USB y copiar el vendor_id 
-    (podria solo mostrar hasta el ID resaltado sin el nombre de la compañia):
-    https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/2.png
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/1.png" alt="" title="Permisos root en terminal"></p>
+</li>
+<li>
+<p>Listar los dispositivos conectados via USB y copiar el vendor_id 
+(podria solo mostrar hasta el ID resaltado sin el nombre de la compañia).</p>
 
-3 - Crear una regla en la siguiente ruta /etc/udev/rules.d/51-android.rules (si ya existe ve al siguiente paso).
-    https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/3.png
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/2.png" alt="" title="Listar dispositivos con lsusb"></p>
+</li>
+<li>
+<p>Crear una regla en la siguiente ruta /etc/udev/rules.d/51-android.rules (si ya existe el archivo ve al siguiente paso).</p>
 
-4 - Con tu editor de texto preferido abre el archivo creado(/etc/udev/rules.d/51-android.rules).
-    Copia y pega esta cadena en el archivo :
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/3.png" alt="" title="Crear regla udev"></p>
+</li>
+<li>
+<p>Con tu editor de texto preferido abre el archivo creado(/etc/udev/rules.d/51-android.rules)
+Copia y pega esta cadena en el archivo:</p>
 
-    SUBSYSTEM=="usb", ATTRS{idVendor}=="",ATTRS{idProduct}=="", MODE="0666"
+<h5>
+<a id="subsystemusb-attrsidvendorattrsidproduct-mode0666" class="anchor" href="#subsystemusb-attrsidvendorattrsidproduct-mode0666" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>SUBSYSTEM=="usb", ATTRS{idVendor}=="",ATTRS{idProduct}=="", MODE="0666"</code>
+</h5>
 
-    En el mismo orden que aparece el ID del dispositivo en el paso 2, 
-    reemplazalos en esta cadena respectivamente (idVendor | idProduct) y guarda los cambios.
-    En este caso seria:
-    https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/6.png
+<p>En el mismo orden que aparece el ID del dispositivo en el paso 2, 
+  reemplazalos en esta cadena respectivamente (idVendor | idProduct) y guarda los cambios:</p>
 
-5 - En el terminal reinicia el servicio udev :
-    https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/7.png
-</code></pre>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/6.png" alt="" title="Agregar idVendor y idProduct"></p>
+</li>
+<li>
+<p>En el terminal reinicia el servicio udev:</p>
+
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/7.png" alt="" title="Reiniciar servicio UDEV"></p>
+</li>
+</ol>
 
 <h2>
-<a id="preparando-el-dispositivo-" class="anchor" href="#preparando-el-dispositivo-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparando el dispositivo :</h2>
+<a id="preparando-el-dispositivo" class="anchor" href="#preparando-el-dispositivo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparando el dispositivo</h2>
 
-<pre><code>1 - Entrar  en Configuración/Acerca de la tablet/ y precionar varias veces en el Numero de Compilación.   
-https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/4.png
+<ol>
+<li>
+<p>Entrar en Configuración/Acerca de la tablet/ y precionar varias veces en el Numero de Compilación:</p>
 
-2 - Entrar en Configuración/Menú desarrollador/Depuración USB.   
-https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/5.png
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/4.png" alt="" title="Activar menú programador"></p>
+</li>
+<li>
+<p>Entrar en Configuración/Menú desarrollador/Depuración USB:</p>
 
-3 - Acepta los permisos Depuración USB al conectar la tablet a la pc
-</code></pre>
+<p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/5.png" alt="" title="Activar depuración USB"></p>
+</li>
+<li>
+<p>Aceptar los permisos Depuración USB (huella digital) al conectar la tablet a la pc:</p>
 
-<hr>
+<h2>
+<a id="" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/8.png" alt="" title="Huella digital">
+</h2>
+</li>
+</ol>
 
 <h1>
 <a id="configurando-tr10-tool" class="anchor" href="#configurando-tr10-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configurando TR10-TOOL</h1>
 
-<p>1 - Descargar el zip/tar.gz de la repo y descomprimir.</p>
-
-<p>2 - Descargar gapps (.zip) y ubicarlo en la carpeta GAPPS con el nombre que tiene el archivo.txt en el mismo directorio. Link descarga GAPPS : <a href="http://opengapps.org/">http://opengapps.org/</a> (Android x86 4.4 / Cualquier variante).</p>
-
-<p>3 - Activar la depuración USB en el dispositivo y aceptar como RSA de confianza (seǵun sea el caso).</p>
-
-<p>4 - Ejecutar el script TR10-TOOL.sh de la siguiente manera : ./TR10-TOOL.sh</p>
-
-<p>5 - Mientras no tengas las gapps no ejecutar la función 1 (no hay problemas solo mostrara el error de que no encuentra el fichero).</p>
+<ol>
+<li><p>Descargar el zip/tar.gz de la repo y descomprimir</p></li>
+<li><p>Descargar gapps (.zip) y ubicarlo en la carpeta GAPPS con el nombre que tiene el archivo.txt
+en el mismo directorio. Link descarga GAPPS <a href="http://opengapps.org/">http://opengapps.org/</a> (Android x86 4.4 / Cualquier variante)</p></li>
+<li><p>Activar la depuración USB en el dispositivo y aceptar como RSA de confianza (seǵun sea el caso)</p></li>
+<li><p>Ejecutar el script TR10-TOOL.sh de la siguiente manera  ./TR10-TOOL.sh</p></li>
+<li><p>Mientras no tengas las gapps no ejecutar la función 1 (no hay problemas solo mostrara 
+el error de que no encuentra el fichero).</p></li>
+</ol>
 
 <h1>
 <a id="video-guía" class="anchor" href="#video-gu%C3%ADa" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video Guía</h1>
