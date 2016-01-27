@@ -1,38 +1,58 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>TR10 TOOL  by neocarvajal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>TR10 TOOL  by WuilmerBolivar</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">TR10 TOOL </h1>
-      <h2 class="project-tagline">Bash Script For TR10CS1/TR10RS1 Intel Atom x86 ( Root + Gapps and Temp-Custom Recovery Tools) </h2>
-      <a href="https://github.com/neocarvajal/TR10-TOOL" class="btn">View on GitHub</a>
-      <a href="https://github.com/neocarvajal/TR10-TOOL/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/neocarvajal/TR10-TOOL/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
-
-    <section class="main-content">
-      <p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/TR10-TOOL-BANNER.png" alt="by @neocarvajal" title="TR10-TOOL BANNER"></p>
+    <div class="wrapper">
+      <header>
+        <h1>TR10 TOOL </h1>
+        <p>Bash Script For TR10CS1/TR10RS1 Intel Atom x86 ( Root + Gapps and Temp-Custom Recovery Tools) </p>
+        <p class="view"><a href="https://github.com/WuilmerBolivar/TR10-TOOL">View the Project on GitHub <small>WuilmerBolivar/TR10-TOOL</small></a></p>
+        <ul>
+          <li><a href="https://github.com/WuilmerBolivar/TR10-TOOL/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/WuilmerBolivar/TR10-TOOL/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/WuilmerBolivar/TR10-TOOL">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/TR10-TOOL-BANNER.png" alt="by @neocarvajal" title="TR10-TOOL BANNER"></p>
 
 <h1>
-<a id="advertencia" class="anchor" href="#advertencia" aria-hidden="true"><span class="octicon octicon-link"></span></a>Advertencia</h1>
+<a id="advertencia" class="anchor" href="#advertencia" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Advertencia</h1>
 
 <p>Esta herramienta fue desarrollada con fines educativos, cada persona es responsable de su uso y de los posibles daños ocasionados a los equipos con los que se utilice el script !</p>
 
 <h1>
-<a id="información" class="anchor" href="#informaci%C3%B3n" aria-hidden="true"><span class="octicon octicon-link"></span></a>Información</h1>
+<a id="información" class="anchor" href="#informaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Información</h1>
 
 <p>Este script fue escrito en Bash para entornos Gnu/Linux usando la ultima versión de adb y fastboot del sdk alone tools para Gnu/Linux. Script pensado para ser utilizado con los modelos TR10CS1 y TR10RS1 de intel entregadas por el estado venezolano a estudiantes universitarios. #CanaimaUniversitario</p>
 
 <h1>
-<a id="pasos-para-utilizar-la-herramienta" class="anchor" href="#pasos-para-utilizar-la-herramienta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pasos para utilizar la herramienta</h1>
+<a id="funciones-disponibles" class="anchor" href="#funciones-disponibles" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Funciones Disponibles</h1>
+
+<ol>
+<li>- Recovery temporal + Root + Gapps   (Copia archivo Super_SU y Gapps | Entra en recovery temporal TWRP)</li>
+<li>- Reiniciar en Recovery Temporal     (TWRP/CWM) </li>
+<li>- Reiniciar en Droidboot (Fastboot)  (Bootloader/Fastboot)</li>
+<li>- Reiniciar en Recovery (Nativo)     (Recovery Mode)</li>
+<li>- Entrar en el shell del dispositivo (Un pequeño gran mundo en tu dispositivo)</li>
+<li>- Bypass Lock                        (Desbloquear dispositivo por PIN/CONTRASEÑA/PATRÓN)</li>
+</ol>
+
+<h1>
+<a id="pasos-para-utilizar-la-herramienta" class="anchor" href="#pasos-para-utilizar-la-herramienta" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pasos para utilizar la herramienta</h1>
 
 <hr>
 
@@ -43,7 +63,7 @@
 <p>Usualmente puede pasar que en Gnu/Linux (dependiendo de la distribución) no reconozca de buenas a primeras tu dispositivo y por tal razón sea imposible que pueda comunicarse con el vía adb o fastboot. Si este es tu caso tendrás que hacer ciertas cosas antes de empezar a utilizar esta herramienta (Si este no es tu caso ve directo a Preparando el dispositivo).</p>
 
 <h2>
-<a id="preparando-el-sistema" class="anchor" href="#preparando-el-sistema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparando el sistema</h2>
+<a id="preparando-el-sistema" class="anchor" href="#preparando-el-sistema" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Preparando el sistema</h2>
 
 <p>Este procedimiento seria el equivalente a instalar los drivers en un sistema privativo como Windows para poder reconocer el dispositivo, estos son los pasos a seguir:</p>
 
@@ -69,7 +89,7 @@
 Copia y pega esta cadena en el archivo:</p>
 
 <h5>
-<a id="subsystemusb-attrsidvendorattrsidproduct-mode0666" class="anchor" href="#subsystemusb-attrsidvendorattrsidproduct-mode0666" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>SUBSYSTEM=="usb", ATTRS{idVendor}=="",ATTRS{idProduct}=="", MODE="0666"</code>
+<a id="subsystemusb-attrsidvendorattrsidproduct-mode0666" class="anchor" href="#subsystemusb-attrsidvendorattrsidproduct-mode0666" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>SUBSYSTEM=="usb", ATTRS{idVendor}=="",ATTRS{idProduct}=="", MODE="0666"</code>
 </h5>
 
 <p>En el mismo orden que aparece el ID del dispositivo en el paso 2, 
@@ -85,7 +105,7 @@ Copia y pega esta cadena en el archivo:</p>
 </ol>
 
 <h2>
-<a id="preparando-el-dispositivo" class="anchor" href="#preparando-el-dispositivo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparando el dispositivo</h2>
+<a id="preparando-el-dispositivo" class="anchor" href="#preparando-el-dispositivo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Preparando el dispositivo</h2>
 
 <ol>
 <li>
@@ -102,13 +122,13 @@ Copia y pega esta cadena en el archivo:</p>
 <p>Aceptar los permisos Depuración USB (huella digital) al ejecutar el script y conectar la tablet al pc:</p>
 
 <h2>
-<a id="" class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/8.png" alt="by @neocarvajal" title="Huella digital">
+<a id="" class="anchor" href="#" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><img src="https://raw.githubusercontent.com/neocarvajal/TR10-TOOL/master/IMAGES/8.png" alt="by @neocarvajal" title="Huella digital">
 </h2>
 </li>
 </ol>
 
 <h1>
-<a id="configurando-tr10-tool" class="anchor" href="#configurando-tr10-tool" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configurando TR10-TOOL</h1>
+<a id="configurando-tr10-tool" class="anchor" href="#configurando-tr10-tool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configurando TR10-TOOL</h1>
 
 <ol>
 <li><p>Descargar el zip/tar.gz de la repo y descomprimir</p></li>
@@ -121,34 +141,61 @@ el error de que no encuentra el fichero).</p></li>
 </ol>
 
 <h1>
-<a id="video-guía-editando-video-nuevo" class="anchor" href="#video-gu%C3%ADa-editando-video-nuevo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video Guía (editando video nuevo...)</h1>
+<a id="video-guía-editando-video-nuevo" class="anchor" href="#video-gu%C3%ADa-editando-video-nuevo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Video Guía (editando video nuevo...)</h1>
 
 <p><a href="https://www.youtube.com/watch?v=Cm7QASoZeWk">https://www.youtube.com/watch?v=Cm7QASoZeWk</a></p>
 
 <h1>
-<a id="desarrollador" class="anchor" href="#desarrollador" aria-hidden="true"><span class="octicon octicon-link"></span></a>Desarrollador</h1>
+<a id="desarrollador" class="anchor" href="#desarrollador" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Desarrollador</h1>
 
 <p>T.S.U Erick Carvajal R. Estudiante universitario en la UPTOS "Clodosbaldo Russiían". Usuario Gnu/Linux desde 2009.</p>
 
 <h1>
-<a id="meta" class="anchor" href="#meta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Meta</h1>
+<a id="meta" class="anchor" href="#meta" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Meta</h1>
 
 <p>Crear una herramienta con más opciones y mucho más universal como si se tratara de una "Suite" que permita gestionar diferentes dispositivos en tareas comunes fácilmente (respaldos, copiar archivos entre un pc y el dispositivo, entre otros), manteniendo las opciones "avanzadas" como flashear Temp Recovery</p>
 
 <h1>
-<a id="soportecontacto" class="anchor" href="#soportecontacto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Soporte/Contacto</h1>
+<a id="agradecimientos" class="anchor" href="#agradecimientos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Agradecimientos</h1>
+
+<ol>
+<li><p>Team Win Recovery Project <a href="https://github.com/omnirom/android_bootable_recovery/">TWRP</a> (repositorio official).</p></li>
+<li><p>Usuario <a href="http://forum.xda-developers.com/search.php?searchid=397303595">vampirefo</a> miembro de la comunidad <em>XDA</em> por el trabajo realizado con los recovery's temporales para los dispositivos Dell Vennue 8 (CWM/TRWP). </p></li>
+</ol>
+
+<h1>
+<a id="entorno-gráfico---versión-110" class="anchor" href="#entorno-gr%C3%A1fico---versi%C3%B3n-110" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Entorno Gráfico - Versión 1.1.0</h1>
+
+<ol>
+<li>
+<p>Barra de progreso de carga del script:</p>
+
+<p><img src="https://raw.githubusercontent.com/WuilmerBolivar/TR10-TOOL/master/IMAGES/CargandoScript.png" alt="by @WuilmerBolivar" title="Cargando Script"></p>
+</li>
+<li>
+<p>Notificación de alerta e inicio de servidor ADB:</p>
+
+<p><img src="https://raw.githubusercontent.com/WuilmerBolivar/TR10-TOOL/master/IMAGES/Notificacion1.png" alt="by @WuilmerBolivar" title="Notificación de Inicio"></p>
+</li>
+<li>
+<p>Menu de opciones principales:</p>
+
+<p><img src="https://raw.githubusercontent.com/WuilmerBolivar/TR10-TOOL/master/IMAGES/MenuPrincipal.png" alt="by @WuilmerBolivar" title="Menu Principal"></p>
+</li>
+</ol>
+
+<h1>
+<a id="soportecontacto" class="anchor" href="#soportecontacto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Soporte/Contacto</h1>
 
 <p>Para discusiones en cuanto al desarrollo y mejoras del script puedes visitar el foro : <a href="http://tabletcanaima.com.ve">http://tabletcanaima.com.ve</a> en la sección desarrollo y adicionalmente puedes encontrarme en #Twitter como <a href="https://github.com/neocarvajal" class="user-mention">@neocarvajal</a></p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/neocarvajal/TR10-TOOL">TR10 TOOL </a> is maintained by <a href="https://github.com/neocarvajal">neocarvajal</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-            <script type="text/javascript">
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/WuilmerBolivar">WuilmerBolivar</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
